@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
@@ -9,18 +9,8 @@ const Computers = ({ isMobile }) => {
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.15} groundColor='black' />
-      <spotLight
-        position={[-20, 50, 10]}
-        angle={0.12}
-        penumbra={1}
-        intensity={1}
-        castShadow
-        shadow-mapSize={1024}
-      />
-      <pointLight intensity={1} />
       <primitive
-        object={computer.scene}
+        object={computer?.scene}
         scale={isMobile ? 0.7 : 0.75}
         position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
@@ -31,47 +21,76 @@ const Computers = ({ isMobile }) => {
 
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const canvasRef = useRef(null);
 
   useEffect(() => {
-    // Add a listener for changes to the screen size
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
+    const handleWebGLContextLost = (event) => {
+      event.preventDefault();
+      // Handle context loss here (e.g., show an error message, reload the page)
+      console.error("WebGL context lost. Please refresh the page.");
+    };
 
-    // Set the initial value of the `isMobile` state variable
-    setIsMobile(mediaQuery.matches);
-
-    // Define a callback function to handle changes to the media query
     const handleMediaQueryChange = (event) => {
       setIsMobile(event.matches);
     };
 
-    // Add the callback function as a listener for changes to the media query
+    const mediaQuery = window.matchMedia("(max-width: 500px)");
+    setIsMobile(mediaQuery.matches);
     mediaQuery.addEventListener("change", handleMediaQueryChange);
 
-    // Remove the listener when the component is unmounted
+    if (canvasRef.current) {
+      canvasRef.current.addEventListener(
+        "webglcontextlost",
+        handleWebGLContextLost,
+        false
+      );
+    }
+
     return () => {
+      if (canvasRef.current) {
+        canvasRef.current.removeEventListener(
+          "webglcontextlost",
+          handleWebGLContextLost,
+          false
+        );
+      }
       mediaQuery.removeEventListener("change", handleMediaQueryChange);
     };
   }, []);
 
   return (
-    <Canvas
-      frameloop='demand'
-      shadows
-      dpr={[1, 2]}
-      camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
-    >
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-        />
-        <Computers isMobile={isMobile} />
-      </Suspense>
+    <div>
+      {canvasRef.current ? (
+        <Canvas
+          onCreated={({ gl }) => {
+            canvasRef.current = gl;
+            gl.physicallyCorrectLights = false;
+            gl.toneMapping = 0; // No tone mapping
+            gl.outputEncoding = 3000; // THREE.sRGBEncoding
+            gl.antialias = false; // Disable antialiasing
+            gl.powerPreference = "low-power"; // Optimize for low-power devices
+            gl.setPixelRatio(0.5); // Lower pixel ratio for performance on low-end devices
+          }}
+          frameloop="demand"
+          dpr={1}
+          camera={{ position: [20, 3, 5], fov: 25 }}
+          gl={{ preserveDrawingBuffer: true }}
+        >
+          <Suspense fallback={<CanvasLoader />}>
+            <OrbitControls
+              enableZoom={false}
+              maxPolarAngle={Math.PI / 2}
+              minPolarAngle={Math.PI / 2}
+            />
+            <Computers isMobile={isMobile} />
+          </Suspense>
 
-      <Preload all />
-    </Canvas>
+          <Preload all />
+        </Canvas>
+      ) : (
+        <div>Error: WebGL not supported. Please use a modern browser.</div>
+      )}
+    </div>
   );
 };
 
