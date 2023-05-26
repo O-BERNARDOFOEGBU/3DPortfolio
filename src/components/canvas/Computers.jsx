@@ -1,15 +1,33 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import { useSpring, a } from "@react-spring/three";
 
 import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile }) => {
   const computer = useGLTF("./desktop_pc/scene.gltf");
 
+  const [isTurningRight, setIsTurningRight] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsTurningRight((prev) => !prev);
+    }, 3000); // Adjust the interval duration as per your preference
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  const { rotation } = useSpring({
+    rotation: isTurningRight ? [0, Math.PI / 4, 0] : [0, -0.2, 0], // Adjust the rotation angles as needed
+    config: { duration: 1500 }, // Adjust the duration as needed
+  });
+
   return (
-    <mesh>
-      <hemisphereLight intensity={0.15} groundColor='black' />
+    <a.mesh rotation={rotation}>
+      <hemisphereLight intensity={0.15} groundColor="black" />
       <spotLight
         position={[-20, 50, 10]}
         angle={0.12}
@@ -23,9 +41,8 @@ const Computers = ({ isMobile }) => {
         object={computer.scene}
         scale={isMobile ? 0.7 : 0.75}
         position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
-        rotation={[-0.01, -0.2, -0.1]}
       />
-    </mesh>
+    </a.mesh>
   );
 };
 
@@ -54,8 +71,8 @@ const ComputersCanvas = () => {
   }, []);
 
   return (
-    <Canvas 
-      frameloop='demand'
+    <Canvas
+      frameloop="demand"
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
