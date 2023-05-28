@@ -24,7 +24,7 @@ const Hero = () => {
           </p>
         </div>
       </div>
-      <div style={{ paddingTop: "9%", position: "relative" }}/>
+      <div style={{ paddingTop: "3%", position: "relative" }}/>
       <ComputersCanvas/>
 {/*xs:bottom-10 bottom-32 */}
       <div className='absolute xs:bottom-2 bottom-8 w-full flex justify-center items-center'>
