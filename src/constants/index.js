@@ -154,7 +154,7 @@ const experiences = [
     points: [
       "Implemented a new look design for the Sabi Admin application, App wide.", 
       'Implemented App tour for the "Buy Now", "Store Features" and New "Wallet" features by designing one reusable component that allows for DRY (Do not Repeat Yourself) concept', 
-      "Participated in daily scrum meetings, sprint planning, code reviews",
+      // "Participated in daily scrum meetings, sprint planning, code reviews",
       // "Conducted unit testing and debugging activities to ensure software quality and functionality.",
       "Translate designs & wireframes into high-quality code following React.js workflows", 
       "Redesigned existing modules and enabled integration and styling of third-party packages like toastify,react-modern-calendar-datepicker, etc."
