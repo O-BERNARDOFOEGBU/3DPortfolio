@@ -22,9 +22,12 @@ import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 
 import meta from "./company/meta.png";
+import sabi from "./company/sabi.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
+import ilml from "./company/ilml.png";
 import tesla from "./company/tesla.png";
+import rideapp from "./company/rideapp.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -53,8 +56,11 @@ export {
   typescript,
   threejs,
   meta,
+  sabi,
+  rideapp,
   shopify,
   starbucks,
+  ilml,
   tesla,
   carrent,
   jobit,
