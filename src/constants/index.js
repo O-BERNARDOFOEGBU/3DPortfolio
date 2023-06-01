@@ -192,28 +192,29 @@ const experiences = [
 const testimonials = [
   {
     testimonial:
+      "Bernard is very efficient at what he does, he helped to optimize my law firm’s website and aided digital presence",
+    name: "George Etokakpan",
+    designation: "Estate Planning Officer",
+    company: "Stanbic IBTC",
+    image: "https://media.licdn.com/dms/image/C4E03AQH3Qr1Tn92bBw/profile-displayphoto-shrink_400_400/0/1600325120299?e=1691020800&v=beta&t=gY0fDdRtUDx5Nfw0rwbAZ4U2OPTSb5pfsFRib6bez8w",
+  },
+  {
+    testimonial:
       "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+    name: "Asimi Olufisayo",
+    designation: "Legal and Compliance Officer",
+    company: "Landmark Africa",
+    image: "https://media.licdn.com/dms/image/C4E03AQH92tNzDMNtzw/profile-displayphoto-shrink_400_400/0/1618590314884?e=1691020800&v=beta&t=gnHg-3sV2JH0R-DOyQRLjQCW5S25SmqN1S1Ruu0BBuc",
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
+      "After Bernard optimized our website, our traffic increased by 50%. We can't thank them enough!",
+    name: "Dolapo Atere",
+    designation: "Tax Consultant",
+    company: "KPMG",
+    image: "https://media.licdn.com/dms/image/D4E03AQHAwbNaBSyJ6w/profile-displayphoto-shrink_400_400/0/1681284550308?e=1691020800&v=beta&t=1nBITfbTS_VqMEB0iZNAH_gtOfRCGs-BvWB9Xukba9Y",
   },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
-  },
+  
 ];
 
 const projects = [
