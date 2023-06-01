@@ -19,13 +19,14 @@ import {
   sabi,
   rideapp,
   // starbucks,
-  ilml,
+  // ilml,
   // tesla,
   // shopify,
   carrent,
   jobit,
   tripguide,
   threejs,
+  tokenberg,
 } from "../assets";
 
 export const navLinks = [
@@ -218,6 +219,31 @@ const testimonials = [
 ];
 
 const projects = [
+  {
+    name: "TokenBerg",
+    description:
+      "The platform is a web-based tool that empowers users to explore cryptocurrencies, analyze chart trends for each currency, keep track of exchanges, and stay updated on the latest crypto news trends.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "redux",
+        color: "purple-text-gradient",
+      },
+      {
+        name: "ant-design",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "chartjs",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: tokenberg,
+    source_code_link: "https://github.com/",
+  },
   {
     name: "Car Rent",
     description:

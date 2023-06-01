@@ -30,6 +30,7 @@ import tesla from "./company/tesla.png";
 import rideapp from "./company/rideapp.png";
 
 import carrent from "./carrent.png";
+import tokenberg from "./tokenberg.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
@@ -65,6 +66,7 @@ export {
   ilml,
   tesla,
   carrent,
+  tokenberg,
   jobit,
   tripguide,
   cv
