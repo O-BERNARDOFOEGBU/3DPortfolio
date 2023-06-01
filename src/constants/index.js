@@ -129,7 +129,7 @@ const experiences = [
       "Implemented robust and scalable frontend architecture, following best practices and design patterns to ensure maintainability and extensibility of the codebase.",
       "Collaborated closely with designers, product managers, and backend engineers to translate wireframes and user stories into pixel-perfect, interactive UI components.",
       "Optimized website performance by conducting code reviews, identifying and resolving performance bottlenecks, and implementing efficient caching strategies.",
-      "Integrated RESTful APIs and GraphQL endpoints to fetch and display dynamic data, ensuring seamless communication between the frontend and backend systems"
+      // "Integrated RESTful APIs and GraphQL endpoints to fetch and display dynamic data, ensuring seamless communication between the frontend and backend systems"
     ],
   },
   {
@@ -155,7 +155,7 @@ const experiences = [
       "Implemented a new look design for the Sabi Admin application, App wide.", 
       'Implemented App tour for the "Buy Now", "Store Features" and New "Wallet" features by designing one reusable component that allows for DRY (Do not Repeat Yourself) concept', 
       "Participated in daily scrum meetings, sprint planning, code reviews",
-      "Conducted unit testing and debugging activities to ensure software quality and functionality.",
+      // "Conducted unit testing and debugging activities to ensure software quality and functionality.",
       "Translate designs & wireframes into high-quality code following React.js workflows", 
       "Redesigned existing modules and enabled integration and styling of third-party packages like toastify,react-modern-calendar-datepicker, etc."
     ],
@@ -170,24 +170,23 @@ const experiences = [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
       "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      // "Participating in code reviews and providing constructive feedback to other developers.",
     ],
   },
-  {
-    title: "Business Analyst",
-    company_name: "INFORMATIONLIFECYCLE MANAGEMENT LIMITED",
-    icon: ilml,
-    iconBg: "#383E56",
-    date: "July 2019 - Aug 2020",
-    points: [
-      "Analyzed client requirements and objectives and determine how software can best meet client’s requirements and objectives",
-      "Functional requirement gathering",
-      "Documentation and Fit-Gap analysis", 
-      "Participated in Implementation and deployment of Proposed Solutions for Agency Requirements in D365 and customizations",
-      "Conduct Meetings and Participated in Performing data migration activities",
-      "Created and maintained business, project, and technical documentation"
-    ],
-  },
+  // {
+  //   title: "Business Analyst",
+  //   company_name: "INFORMATIONLIFECYCLE MANAGEMENT LIMITED",
+  //   icon: ilml,
+  //   iconBg: "#383E56",
+  //   date: "July 2019 - Aug 2020",
+  //   points: [
+  //     "Analyzed client requirements and objectives and determine how software can best meet client’s requirements and objectives",
+  //     "Documentation and Fit-Gap analysis", 
+  //     "Participated in Implementation and deployment of Proposed Solutions for Agency Requirements in D365 and customizations",
+  //     "Conduct Meetings and Participated in Performing data migration activities",
+  //     "Created and maintained business, project, and technical documentation"
+  //   ],
+  // },
 ];
 
 const testimonials = [

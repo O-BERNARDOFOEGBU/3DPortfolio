@@ -12,6 +12,8 @@ import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 
+import { cv } from "../assets";
+
 const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
@@ -56,10 +58,25 @@ const ExperienceCard = ({ experience }) => {
   );
 };
 
+const CVDownloadButton = () => {
+  const handleDownload = () => {
+    // Logic to initiate the CV download
+    const downloadLink = document.createElement("a");
+    downloadLink.href = cv; // Replace with the actual path to your CV file
+    downloadLink.download = "Bernard_Ofoegbu.pdf"; // Replace with the desired filename for the downloaded file
+    downloadLink.click();
+  };
+  return (
+    <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={handleDownload}>
+      Download CV
+    </button>
+  );
+}
+
 const Experience = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div style={{ height: "fit-content"}} variants={textVariant()}>
         <p className={`${styles.sectionSubText} text-center`}>
           What I have done so far
         </p>
@@ -78,6 +95,7 @@ const Experience = () => {
           ))}
         </VerticalTimeline>
       </div>
+      <CVDownloadButton/>
     </>
   );
 };

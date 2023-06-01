@@ -33,6 +33,8 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
+import cv from "./cv/cv.pdf";
+
 export {
   logo,
   backend,
@@ -65,4 +67,5 @@ export {
   carrent,
   jobit,
   tripguide,
+  cv
 };
