@@ -207,7 +207,7 @@ const testimonials = [
   },
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+      "I thought it was impossible to make a website as beautiful as our product, but Bernard proved me wrong.",
     name: "Asimi Olufisayo",
     designation: "Legal and Compliance Officer",
     company: "Landmark Africa",
