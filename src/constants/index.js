@@ -27,6 +27,8 @@ import {
   tripguide,
   threejs,
   tokenberg,
+  trollbasket,
+  tictactoe,
 } from "../assets";
 
 export const navLinks = [
@@ -230,19 +232,61 @@ const projects = [
       },
       {
         name: "redux",
-        color: "purple-text-gradient",
+        color: "pink-text-gradient",
       },
       {
-        name: "ant-design",
-        color: "pink-text-gradient",
+        name: "antd",
+        color: "green-text-gradient",
       },
       {
         name: "chartjs",
         color: "pink-text-gradient",
       },
+      {
+        name: "restapi",
+        color: "green-text-gradient",
+      }
     ],
     image: tokenberg,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/O-BERNARDOFOEGBU/TokenBerg",
+  },
+  {
+    name: "TrollBasket",
+    description:
+      "A simple Progressive Web Application (PWA) that enables seamless shopping, allows users browse through product collection, effortlessly add items to their cart, and easily adjust quantities to meet their needs.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "redux",
+        color: "green-text-gradient",
+      },
+      {
+        name: "styled-components",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: trollbasket,
+    source_code_link: "https://github.com/O-BERNARDOFOEGBU/TrollBasket",
+  },
+  {
+    name: "Tic-Tac-Toe",
+    description:
+      "A simple Web Application, that allows the user Indulge in the delightful world of tic-tac-toe on a user-friendly platform, offering the opportunity to engage in thrilling matches against a worthy opponent – yourself! ",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "redux",
+        color: "green-text-gradient",
+      },
+    ],
+    image: tictactoe,
+    source_code_link: "https://github.com/O-BERNARDOFOEGBU/tic-tac-toe",
   },
   {
     name: "Car Rent",

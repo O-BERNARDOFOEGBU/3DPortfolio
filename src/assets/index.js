@@ -29,8 +29,11 @@ import ilml from "./company/ilml.png";
 import tesla from "./company/tesla.png";
 import rideapp from "./company/rideapp.png";
 
-import carrent from "./carrent.png";
+
 import tokenberg from "./tokenberg.png";
+import trollbasket from "./trollbasket.png";
+import tictactoe from "./tic-tac-toe.png";
+import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
@@ -65,8 +68,10 @@ export {
   starbucks,
   ilml,
   tesla,
-  carrent,
   tokenberg,
+  trollbasket,
+  tictactoe,
+  carrent,
   jobit,
   tripguide,
   cv
