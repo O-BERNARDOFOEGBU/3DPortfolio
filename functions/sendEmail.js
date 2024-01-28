@@ -14,7 +14,7 @@ exports.handler = async (event) => {
   });
 
   const mailOptions = {
-    from: "",
+    from: "your-email@gmail.com",
     to: "bernardofoegbu71@gmail.com", // Replace with your own email
     subject: "New Contact Form Submission",
     text: `

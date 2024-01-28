@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
+// import emailjs from "@emailjs/browser";
 
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
@@ -70,10 +70,7 @@ const Contact = () => {
 
     try {
       // Replace 'YOUR_NETLIFY_FUNCTION_ENDPOINT' with the actual endpoint after deployment
-      await axios.post(
-        "https://bernardofoegbu.com/.netlify/functions/sendEmail",
-        form
-      );
+      await axios.post("/.netlify/functions/sendEmail", form);
       alert("Message sent successfully!");
     } catch (error) {
       console.error("Error sending message:", error);
