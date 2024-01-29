@@ -32,16 +32,33 @@ exports.handler = async (event) => {
     "Access-Control-Allow-Headers": "Content-Type",
   };
 
+  //   try {
+  //     await transporter.sendMail(mailOptions);
+  //     return {
+  //       statusCode: 200,
+  //       body: JSON.stringify({ message: "Email sent successfully" }),
+  //     };
+  //   } catch (error) {
+  //     console.error("Error sending email:", error);
+  //     return {
+  //       statusCode: 500,
+  //       body: JSON.stringify({ message: "Failed to send email" }),
+  //     };
+  //   }
+  // };
+
   try {
     await transporter.sendMail(mailOptions);
     return {
       statusCode: 200,
+      headers,
       body: JSON.stringify({ message: "Email sent successfully" }),
     };
   } catch (error) {
     console.error("Error sending email:", error);
     return {
       statusCode: 500,
+      headers,
       body: JSON.stringify({ message: "Failed to send email" }),
     };
   }
