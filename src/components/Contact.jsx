@@ -71,7 +71,7 @@ const Contact = () => {
     try {
       // Replace 'YOUR_NETLIFY_FUNCTION_ENDPOINT' with the actual endpoint after deployment
       await axios.post(
-        "https://bernardofoegbu.com/.netlify/functions/sendEmail",
+        "https://bernardofoegbu.netlify.app/.netlify/functions/sendEmail",
         form
       );
       alert("Message sent successfully!");
