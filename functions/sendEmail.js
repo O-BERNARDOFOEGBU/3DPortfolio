@@ -9,7 +9,7 @@ exports.handler = async (event) => {
     service: "gmail",
     auth: {
       user: import.meta.env.VITE_APP_EMAIL_ADDRESS,
-      pass: import.meta.env.VITE_APP_EMAIL_ADDRESS,
+      pass: import.meta.env.VITE_APP_EMAIL_PASS_KEY,
     },
   });
 
@@ -23,7 +23,7 @@ exports.handler = async (event) => {
       Message: ${data.message}
     `,
   };
-
+  console.log(mailOptions);
   try {
     await transporter.sendMail(mailOptions);
     return {
