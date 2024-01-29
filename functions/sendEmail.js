@@ -14,7 +14,7 @@ exports.handler = async (event) => {
   });
 
   const mailOptions = {
-    from: "your-email@gmail.com",
+    from: form.email,
     to: "bernardofoegbu71@gmail.com", // Replace with your own email
     subject: "New Contact Form Submission",
     text: `
@@ -23,7 +23,9 @@ exports.handler = async (event) => {
       Message: ${data.message}
     `,
   };
-  console.log(mailOptions);
+  console.log("Data:", data);
+  console.log("Mail Options:", mailOptions);
+
   try {
     await transporter.sendMail(mailOptions);
     return {
