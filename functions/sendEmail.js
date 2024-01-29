@@ -26,6 +26,12 @@ exports.handler = async (event) => {
   console.log("Data:", data);
   console.log("Mail Options:", mailOptions);
 
+  // Add CORS headers
+  const headers = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers": "Content-Type",
+  };
+
   try {
     await transporter.sendMail(mailOptions);
     return {
